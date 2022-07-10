@@ -42,7 +42,7 @@ class AgentBase:
         self.device = torch.device(f"cuda:{gpu_id}" if (torch.cuda.is_available() and (gpu_id >= 0)) else "cpu")
         self.traj_list = [
             [list() for _ in range(4 if self.if_off_policy else 5)]
-            	for _ in range(self.env_num)
+            for _ in range(self.env_num)
             ]
         '''network'''
         act_class = getattr(self, "act_class", None)
